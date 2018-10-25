@@ -78,7 +78,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageURL: this.state.input})
-      fetch('https://ancient-lowlands-58490.herokuapp.com/imageurl', {
+      fetch('https://smar1brain.herokuapp.com/imageurl', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -88,7 +88,7 @@ class App extends Component {
       .then(response => response.json())    
       .then(response => {
         if (response) {
-          fetch('https://ancient-lowlands-58490.herokuapp.com/image', {
+          fetch('https://smar1brain.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
