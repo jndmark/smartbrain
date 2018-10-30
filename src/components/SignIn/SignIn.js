@@ -5,7 +5,7 @@ class SignIn extends React.Component {
     super(props);
     this.state = {
       signInEmail: '',
-      signInPassword: ''
+      signInPassword: '',
     }
   }
 
@@ -26,14 +26,14 @@ class SignIn extends React.Component {
         password: this.state.signInPassword
       })
     })
-      .then(response => response.text())
-      .then(text => console.log(text))
-        /* if (user.id) {
+      .then(response => response.json())
+      .then(user => {
+        if (user.id) {
           this.props.loadUser(user)
           this.props.onRouteChange('home');
-        } */
-
-  } 
+        }
+      })
+  }
 
   render() {
     const { onRouteChange } = this.props; // DESTRUCTURING. We did this instead of doing this.props.onRouteChange in each <input> tag.
