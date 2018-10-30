@@ -28,12 +28,12 @@ class SignIn extends React.Component {
     })
       .then(response => response.text())
       .then(text => console.log(text))
-       /* if (user.id) {
+        if (user.id) {
           this.props.loadUser(user)
           this.props.onRouteChange('home');
         }
       })
-  } */
+  } 
 
   render() {
     const { onRouteChange } = this.props; // DESTRUCTURING. We did this instead of doing this.props.onRouteChange in each <input> tag.
